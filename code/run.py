@@ -22,6 +22,7 @@ using a masked language modeling (MLM) loss.
 from __future__ import absolute_import, division, print_function
 
 import argparse
+import shlex # CUSTOM
 import glob
 import logging
 import os
@@ -370,8 +371,9 @@ def test(args, model, tokenizer):
     }
     return result
                         
-def main():
+def main(args_:str = None):
     parser = argparse.ArgumentParser()
+    print('changed')
 
     ## Required parameters
     parser.add_argument("--train_data_file", default="../dataset/train.jsonl", type=str,
@@ -485,8 +487,10 @@ def main():
     parser.add_argument("--training_percent", default=1., type=float, help="percet of training sample")
     parser.add_argument("--alpha_weight", default=1., type=float, help="percet of training sample")
 
-
-    args = parser.parse_args()
+    if args_:
+      args = parser.parse_args(shlex.split(args_))
+    else:
+      args = parser.parse_args()
 
     # Setup distant debugging if needed
     if args.server_ip and args.server_port:
@@ -607,7 +611,7 @@ def main():
             for key in sorted(test_result.keys()):
                 logger.info("  %s = %s", key, str(round(test_result[key],4)))
 
-    return results
+    return results, model
 
 
 if __name__ == "__main__":
