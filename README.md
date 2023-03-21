@@ -1,3 +1,5 @@
+Переписал немного `code/run.py` и `code/utils.py` чтобы можно было запустить в notebook. Изменения есть в commit history.
+
 Смотрите [ноутбук](code/ReGVD_custom.ipynb)
 
 .
