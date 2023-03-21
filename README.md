@@ -1,3 +1,17 @@
+Смотрите [ноутбук](code/ReGVD_custom.ipynb)
+
+.
+
+.
+
+.
+
+.
+
+.
+
+
+
 <p align="center">
 	<img src="https://github.com/daiquocnguyen/GNN-ReGVD/blob/master/logo.png" width="125">
 </p>
