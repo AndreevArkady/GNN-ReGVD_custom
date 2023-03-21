@@ -1,7 +1,9 @@
 import numpy as np
 import pickle as pkl
 import scipy.sparse as sp
-from scipy.sparse.linalg.eigen.arpack import eigsh
+# from scipy.sparse.linalg.eigen.arpack import eigsh
+from scipy.sparse.linalg import eigsh
+
 import sys
 import random
 import re
